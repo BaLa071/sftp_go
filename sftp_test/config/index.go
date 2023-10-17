@@ -9,8 +9,8 @@ import (
 )
 
 func Sftp_connection() *sftp.Client {
-	username := "netsys"
-	password := "Netsys@4321!"
+	username := "username"
+	password := "password"
 	clientConfig := &ssh.ClientConfig{
 		User:            username,
 		Auth:            []ssh.AuthMethod{ssh.Password(password)},
