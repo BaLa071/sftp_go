@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package filetransfer;
+
+option go_package="github.com/BaLa071";
+
+service FileTransferService {
+  rpc GetFile(GetFileRequest) returns (GetFileResponse);
+  rpc PutFile(PutFileRequest) returns (PutFileResponse);
+}
+
+message GetFileRequest {
+  string sftp_server=1;
+  string remote_path=2;
+  string local_path=3;
+}
+
+message GetFileResponse {
+  string message=1;
+}
+
+message PutFileRequest {
+  string sftp_server=1;
+  string local_path=2;
+  string remote_path=3;
+}
+
+message PutFileResponse {
+  string message=1;
+}
